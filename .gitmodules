@@ -7,3 +7,6 @@
 [submodule "pkgs/nrepl"]
 	path = pkgs/nrepl
 	url = https://github.com/kingtim/nrepl.el.git
+[submodule "pkgs/midje-mode"]
+	path = pkgs/midje-mode
+	url = https://github.com/dnaumov/midje-mode.git

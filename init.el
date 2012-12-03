@@ -12,7 +12,7 @@
 ;; Packages installed locally
 ;; --------------------------
 (defvar local-package-root "~/.emacs.d/pkgs/")
-(defvar local-packages '(slime clojure-mode nrepl))
+(defvar local-packages '(slime clojure-mode nrepl midje-mode))
 
 (dolist (pkg local-packages)
   (let ((pkg-root (format "%s/%s" local-package-root pkg)))
