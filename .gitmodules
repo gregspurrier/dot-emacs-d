@@ -1,3 +1,9 @@
 [submodule "pkgs/slime"]
 	path = pkgs/slime
 	url = https://github.com/nablaone/slime.git
+[submodule "pkgs/clojure-mode"]
+	path = pkgs/clojure-mode
+	url = https://github.com/technomancy/clojure-mode.git
+[submodule "pkgs/nrepl"]
+	path = pkgs/nrepl
+	url = https://github.com/kingtim/nrepl.el.git

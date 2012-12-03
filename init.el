@@ -25,7 +25,7 @@
 ;; Packages installed locally
 ;; --------------------------
 (defvar local-package-root "~/.emacs.d/pkgs/")
-(defvar local-packages '(slime))
+(defvar local-packages '(slime clojure-mode nrepl))
 
 (dolist (pkg local-packages)
   (let ((pkg-root (format "%s/%s" local-package-root pkg)))
@@ -61,6 +61,26 @@
 ;; Programming modes
 ;; -----------------
 
-;; Lisp
+;; Lisps in General
+(defun lispy-mode-setup ()
+  (paredit-mode t)
+  (highlight-parentheses-mode t)
+  (if (window-system)
+      (progn
+        (setq fci-rule-column 80)
+        (setq fci-rule-color "orange")
+        (fci-mode))))
+
+(add-hook 'emacs-lisp-mode-hook 'lispy-mode-setup)
+(add-hook 'scheme-mode-hook 'lispy-mode-setup)
+
+;; Common Lisp
+(add-hook 'lisp-mode-hook 'lispy-mode-setup)
 (setq inferior-lisp-program "/usr/local/bin/sbcl --noinform")
 (slime-setup '(slime-fancy))
+
+;; Clojure
+(add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
+(add-hook 'clojure-mode-hook 'lispy-mode-setup)
+(add-hook 'nrepl-mode-hook 'paredit-mode)
+(add-hook 'nrepl-mode-hook 'highlight-parentheses-mode)
