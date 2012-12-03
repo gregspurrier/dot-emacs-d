@@ -5,22 +5,9 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-(defvar my-packages '(highlight-parentheses 
-		      paredit
-		      fill-column-indicator
-		      solarized-theme 
-		      zenburn-theme
-		      htmlize
-		      markdown-mode)
-  "A list of packages to ensure are installed at launch.")
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;; The packages checked in to git under ~/.emacs.d/elpa are not checked
+;; in with their .elc files. To compile them, execute this command:
+;;   (byte-recompile-directory (expand-file-name "~/.emacs.d/elpa") 0)
 
 ;; Packages installed locally
 ;; --------------------------
