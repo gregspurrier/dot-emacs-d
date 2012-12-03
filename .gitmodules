@@ -1,0 +1,3 @@
+[submodule "pkgs/slime"]
+	path = pkgs/slime
+	url = https://github.com/nablaone/slime.git

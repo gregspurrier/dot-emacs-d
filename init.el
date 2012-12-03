@@ -24,6 +24,14 @@
 
 ;; Packages installed locally
 ;; --------------------------
+(defvar local-package-root "~/.emacs.d/pkgs/")
+(defvar local-packages '(slime))
+
+(dolist (pkg local-packages)
+  (let ((pkg-root (format "%s/%s" local-package-root pkg)))
+    (when (file-exists-p pkg-root)
+      (add-to-list 'load-path pkg-root)
+      (require pkg))))
 
 ;; General Customizations
 ;; ----------------------
@@ -50,7 +58,9 @@
 (setq mac-option-modifier 'hyper)
 (setq mac-command-modifier 'meta)
 
-;; Mode Hooks
-;; ----------
+;; Programming modes
+;; -----------------
 
-
+;; Lisp
+(setq inferior-lisp-program "/usr/local/bin/sbcl --noinform")
+(slime-setup '(slime-fancy))
