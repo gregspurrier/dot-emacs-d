@@ -58,6 +58,10 @@
         (setq fci-rule-color "orange")
         (fci-mode))))
 
+(defun repl-mode-setup ()
+  (paredit-mode t)
+  (highlight-parentheses-mode t))
+
 (add-hook 'emacs-lisp-mode-hook 'lispy-mode-setup)
 (add-hook 'scheme-mode-hook 'lispy-mode-setup)
 
@@ -65,9 +69,9 @@
 (add-hook 'lisp-mode-hook 'lispy-mode-setup)
 (setq inferior-lisp-program "/usr/local/bin/sbcl --noinform")
 (slime-setup '(slime-fancy))
+(add-hook 'slime-repl-mode-hook 'repl-mode-setup)
 
 ;; Clojure
 (add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
 (add-hook 'clojure-mode-hook 'lispy-mode-setup)
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'highlight-parentheses-mode)
+(add-hook 'nrepl-mode-hook 'repl-mode-setup)
