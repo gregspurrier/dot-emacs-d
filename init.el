@@ -28,6 +28,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
+(setq ispell-program-name "/usr/local/bin/aspell")
 
 ;; Customize the way that Emacs looks
 (menu-bar-mode -1)
