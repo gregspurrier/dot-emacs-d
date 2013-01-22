@@ -20,6 +20,12 @@
       (add-to-list 'load-path pkg-root)
       (require pkg))))
 
+(let ((org-lisp (format "%s/%s" local-package-root "org/lisp")))
+  (when (file-exists-p org-lisp)
+    (add-to-list 'load-path org-lisp)
+    (require 'org)))
+
+
 ;; General Customizations
 ;; ----------------------
 (setq make-backup-files nil)
