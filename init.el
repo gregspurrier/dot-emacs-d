@@ -12,7 +12,7 @@
 ;; Packages installed locally
 ;; --------------------------
 (defvar local-package-root "~/.emacs.d/pkgs/")
-(defvar local-packages '(slime clojure-mode nrepl midje-mode))
+(defvar local-packages '(slime clojure-mode nrepl midje-mode shen-mode))
 
 (dolist (pkg local-packages)
   (let ((pkg-root (format "%s/%s" local-package-root pkg)))
@@ -82,3 +82,10 @@
 (add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
 (add-hook 'clojure-mode-hook 'lispy-mode-setup)
 (add-hook 'nrepl-mode-hook 'repl-mode-setup)
+
+;; Shen
+(require 'inf-shen)
+(setq inferior-shen-program "~/bin/shen-repl")
+(add-to-list 'auto-mode-alist '("\.shen$" . shen-mode))
+(add-hook 'shen-mode-hook 'lispy-mode-setup)
+(add-hook 'inferior-shen-mode-hook 'repl-mode-setup)
