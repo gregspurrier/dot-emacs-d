@@ -53,6 +53,10 @@
 (setq mac-option-modifier 'hyper)
 (setq mac-command-modifier 'meta)
 
+;; Key bindings
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-c =") 'er/expand-region)
+
 ;; Programming modes
 ;; -----------------
 (defun prog-mode-setup ()
