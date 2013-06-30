@@ -110,9 +110,19 @@
 ;; Shen
 (require 'inf-shen)
 (setq inferior-shen-program "~/bin/shen-repl")
-(add-to-list 'auto-mode-alist '("\.shen$" . shen-mode))
 (add-hook 'shen-mode-hook 'lispy-mode-setup)
 (add-hook 'inferior-shen-mode-hook 'repl-mode-setup)
+
+;; Bypass paredit's backslash handling. It gets confused by Shen's
+;; comments.
+(defun disable-paredit-backslash ()
+  (local-set-key [remap paredit-backslash]
+                 (lambda ()
+                   (interactive)
+                   (insert "\\"))))
+
+(add-hook 'shen-mode-hook 'disable-paredit-backslash t)
+(add-hook 'inferior-shen-mode-hook 'disable-paredit-backslash t)
 
 ;; JavaScript
 (setq js-indent-level 2)
