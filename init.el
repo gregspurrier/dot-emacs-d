@@ -33,6 +33,7 @@
 (global-auto-revert-mode t)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
+(setq require-final-newline t)
 (setq inhibit-startup-message t)
 (setq ispell-program-name "/usr/local/bin/aspell")
 
@@ -54,6 +55,10 @@
 
 ;; Programming modes
 ;; -----------------
+(defun prog-mode-setup ()
+  (setq show-trailing-whitespace t))
+
+(add-hook 'prog-mode-hook 'prog-mode-setup)
 
 ;; Lisps in General
 (defun lispy-mode-setup ()
@@ -89,3 +94,6 @@
 (add-to-list 'auto-mode-alist '("\.shen$" . shen-mode))
 (add-hook 'shen-mode-hook 'lispy-mode-setup)
 (add-hook 'inferior-shen-mode-hook 'repl-mode-setup)
+
+;; JavaScript
+(setq js-indent-level 2)
