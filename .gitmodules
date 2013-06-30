@@ -6,4 +6,4 @@
 	url = https://github.com/dnaumov/midje-mode.git
 [submodule "pkgs/shen-mode"]
 	path = pkgs/shen-mode
-	url = git://github.com/eschulte/shen-mode.git
+	url = git://github.com/gregspurrier/shen-mode.git
