@@ -48,11 +48,20 @@
 (tool-bar-mode -1)
 (column-number-mode t)
 
+;; Fonts and Themes
+(defun set-first-available-font (choices)
+  (let* ((font-list (font-family-list))
+         (choice (find-if (lambda (f) (member (car f) font-list)) 
+                          choices)))
+    (when choice
+      (set-frame-font (format "%s-%d" (car choice) (cdr choice))))))
+
 (if (window-system)
     (progn
-      (load-theme 'zenburn t)
-      (set-default-font "Inconsolata-14")
-      (set-frame-height (selected-frame) 48)))
+      (load-theme 'solarized-light t)
+      (set-first-available-font '(("Source Code Pro" . 12)
+                                  ("Inconsolata" . 14)))
+      (set-frame-height (selected-frame) 40)))
 
 ;; Meta key bindings for Mac OS X
 (setq mac-option-modifier 'hyper)
