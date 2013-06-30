@@ -35,7 +35,12 @@
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline t)
 (setq inhibit-startup-message t)
-(setq ispell-program-name "/usr/local/bin/aspell")
+(setq ispell-program-name "aspell")
+
+;; Paths
+(add-to-list 'exec-path "/usr/local/bin")
+(add-to-list 'exec-path (concat (getenv "HOME") "/bin"))
+(add-to-list 'exec-path (concat (getenv "HOME") "/.rbenv/shims"))
 
 ;; Customize the way that Emacs looks
 (menu-bar-mode -1)
