@@ -51,7 +51,7 @@
 ;; Fonts and Themes
 (defun set-first-available-font (choices)
   (let* ((font-list (font-family-list))
-         (choice (find-if (lambda (f) (member (car f) font-list)) 
+         (choice (find-if (lambda (f) (member (car f) font-list))
                           choices)))
     (when choice
       (set-frame-font (format "%s-%d" (car choice) (cdr choice))))))
@@ -62,10 +62,6 @@
       (set-first-available-font '(("Source Code Pro" . 12)
                                   ("Inconsolata" . 14)))
       (set-frame-height (selected-frame) 40)))
-
-;; Meta key bindings for Mac OS X
-(setq mac-option-modifier 'hyper)
-(setq mac-command-modifier 'meta)
 
 ;; Key bindings
 (global-set-key (kbd "C-=") 'er/expand-region)
