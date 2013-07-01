@@ -36,6 +36,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq inhibit-startup-message t)
 (setq ispell-program-name "aspell")
 
