@@ -80,7 +80,12 @@
 ;; Lisps in General
 (defun lispy-mode-setup ()
   (paredit-mode t)
-  (highlight-parentheses-mode t))
+  (highlight-parentheses-mode t)
+  (if (window-system)
+      (progn
+        (setq fci-rule-column 80)
+        (setq fci-rule-color "orange")
+        (fci-mode))))
 
 (defun repl-mode-setup ()
   (paredit-mode t)
