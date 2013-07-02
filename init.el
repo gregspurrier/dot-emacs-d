@@ -73,6 +73,7 @@
 
 ;; Programming modes
 ;; -----------------
+(require 'yasnippet)
 (yas-reload-all)
 (defun prog-mode-setup ()
   (setq show-trailing-whitespace t)
