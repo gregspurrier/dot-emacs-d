@@ -133,11 +133,15 @@
    '((asciidoc-ruby
       :submode ruby-mode
       :front "\\[source,ruby\\]\n----\n"
-      :back "^----\n")
+      :back "^----\n"
+      :insert ((?r embruby nil
+                   @ "[source,ruby]\n----\n" @ _ @ "\n----\n" @)))
      (asciidoc-shen
       :submode shen-mode
       :front "\\[source,lisp\\]\n----\n"
-      :back "^----\n")))
+      :back "^----\n"
+      :insert ((?s embshen nil
+                   @ "[source,lisp]\n----\n" @ _ @ "\n----\n" @)))))
   (setq mmm-global-mode 'maybe)
   (mmm-add-mode-ext-class 'text-mode nil 'asciidoc-ruby)
   (mmm-add-mode-ext-class 'text-mode nil 'asciidoc-shen))
