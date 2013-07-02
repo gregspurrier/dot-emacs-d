@@ -73,8 +73,10 @@
 
 ;; Programming modes
 ;; -----------------
+(yas-reload-all)
 (defun prog-mode-setup ()
-  (setq show-trailing-whitespace t))
+  (setq show-trailing-whitespace t)
+  (yas-minor-mode 1))
 
 (add-hook 'prog-mode-hook 'prog-mode-setup)
 

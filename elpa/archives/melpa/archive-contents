@@ -467,7 +467,7 @@
 		 [(20120406 2251)
 		  nil "generic major mode for tabulated lists. [github]" single])
  (tabbar-ruler .
-	       [(20130628 841)
+	       [(20130701 2353)
 		((tabbar
 		  (2 0 1)))
 		"Pretty tabbar, autohide, use both tabbar/ruler [github]" tar])
@@ -655,7 +655,7 @@
 	  [(20130210 1815)
 	   nil "Insert snippets of text into a buffer [github]" single])
  (smotitah .
-	   [(20130627 1153)
+	   [(20130702 946)
 	    nil "Modular emacs configuration framework [github]" tar])
  (smooth-scrolling .
 		   [(20130602 1609)
@@ -1959,7 +1959,7 @@
 	    [(20130530 752)
 	     nil "navigation by char [github]" single])
  (jump .
-       [(20121016 1203)
+       [(20130702 833)
 	((findr
 	  (0 7))
 	 (inflections
@@ -3244,7 +3244,7 @@
 	      [(20130620 1829)
 	       nil "Egison editing mode [github]" single])
  (egg .
-      [(20130306 1004)
+      [(20130702 925)
        nil "Emacs Got Git - Emacs interface to Git [github]" tar])
  (editorconfig .
 	       [(20130606 1741)
