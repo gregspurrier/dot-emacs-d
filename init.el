@@ -125,3 +125,19 @@
 
 ;; JavaScript
 (setq js-indent-level 2)
+
+;; mmm-mode
+(unless (eq system-type 'darwin)
+  (require 'mmm-mode)
+  (mmm-add-classes
+   '((asciidoc-ruby
+      :submode ruby-mode
+      :front "\\[source,ruby\\]\n----\n"
+      :back "^----\n")
+     (asciidoc-shen
+      :submode shen-mode
+      :front "\\[source,lisp\\]\n----\n"
+      :back "^----\n")))
+  (setq mmm-global-mode 'maybe)
+  (mmm-add-mode-ext-class 'text-mode nil 'asciidoc-ruby)
+  (mmm-add-mode-ext-class 'text-mode nil 'asciidoc-shen))
